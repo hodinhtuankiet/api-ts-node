@@ -34,7 +34,8 @@ export const getUserBySessionToken = (sesstionToken:string) => UserModel.findOne
     'authentication.token':sesstionToken
 });
 export const getUserById = (id:String) => UserModel.findOne(id)
+// learn about Recode ts 
 export const createUser = (value: Record<string,any>) => new UserModel(value)
     .save().then((user)=> user.toObject())
 export const deleteUserById = (id:String) => UserModel.findOneAndDelete({_id:id})
-export const updateUserById = (id:String,value: Record<string,any>) => UserModel.findByIdAndUpdate({_id:id})
+export const updateUserById = (id:String,value: Record<string,any>) => UserModel.findByIdAndUpdate(id,value)
