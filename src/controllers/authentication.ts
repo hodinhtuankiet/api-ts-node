@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { createUser, getUserByEmail } from 'db/users';
+import { createUser, getUserByEmail } from '../db/users';
 import {random , authentication} from '../helpers'
 
 export const register = async (req: express.Request, res: express.Response) => {
@@ -8,7 +8,7 @@ export const register = async (req: express.Request, res: express.Response) => {
         const { email, password ,username } = req.body;
 
         if(!email || !password || !username) {
-            return res.sendStatus(400); 
+            return res.sendStatus(404); 
         }
 
         const existingUser = await getUserByEmail(email);

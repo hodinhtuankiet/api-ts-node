@@ -6,7 +6,7 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
-import route from 'route';
+import route from './route';
 
 const app = express();
 // credentials: true allow send infor like cookies,authentication
